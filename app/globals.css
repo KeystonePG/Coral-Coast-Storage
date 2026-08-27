@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* Coral Coast palette — matches the logo concept: teal water, coral accent */
+  --color-sand-50: #faf8f5;
+  --color-sand-100: #f0e9dd;
+  --color-sand-200: #ddd0b8;
+
+  --color-teal-400: #3f9aa3;
+  --color-teal-500: #1f6f78;
+  --color-teal-700: #17414a;
+  --color-teal-900: #102b31;
+
+  --color-coral-400: #ffb199;
+  --color-coral-500: #ff6f59;
+  --color-coral-600: #e0553f;
+
+  --color-ink-900: #1f2422;
+  --color-ink-700: #4c534f;
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-wide-plus: 0.18em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-sand-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-coral-400);
+    color: var(--color-teal-900);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: var(--tracking-wide-plus);
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--color-coral-600);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
