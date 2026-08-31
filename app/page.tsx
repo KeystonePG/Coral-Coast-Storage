@@ -1,12 +1,5 @@
-import {
-  concept,
-  indoorTiers,
-  site,
-  status,
-  timeline,
-  whyHere,
-  yardClasses,
-} from "@/lib/content";
+import Link from "next/link";
+import { concept, site, status, whyHere } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -25,11 +18,25 @@ export default function Home() {
           <span>·</span>
           <span>{concept.yardBays}</span>
         </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <Link
+            href="/what-we-offer"
+            className="rounded-full bg-coral-500 px-6 py-3 text-sm font-medium text-sand-50 transition hover:bg-coral-600"
+          >
+            See what we're planning
+          </Link>
+          <Link
+            href="/enquire"
+            className="rounded-full border border-sand-50/40 px-6 py-3 text-sm font-medium text-sand-50 transition hover:bg-sand-50/10"
+          >
+            Register interest
+          </Link>
+        </div>
       </section>
 
       {/* Why here */}
       <section className="mx-auto max-w-3xl px-6 py-20 sm:px-10">
-        <p className="eyebrow text-center">Why Port Denison</p>
+        <p className="eyebrow text-center text-gold-500">Why Port Denison</p>
         <h2 className="mt-3 text-center font-display text-3xl text-ink-900">
           A gap in the region
         </h2>
@@ -43,81 +50,37 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* Indoor tiers */}
-      <section className="bg-sand-100 px-6 py-20 sm:px-10">
-        <div className="mx-auto max-w-3xl">
-          <p className="eyebrow text-center">Planned indoor units</p>
-          <h2 className="mt-3 text-center font-display text-3xl text-ink-900">
-            Indicative pricing
-          </h2>
-          <div className="mt-10 overflow-x-auto">
-            <table className="w-full min-w-[420px] border-collapse text-left text-sm">
-              <thead>
-                <tr className="border-b border-sand-200 text-ink-900">
-                  <th className="py-3 pr-4 font-display text-base font-normal">Tier</th>
-                  <th className="py-3 pr-4 font-display text-base font-normal">Size</th>
-                  <th className="py-3 font-display text-base font-normal">Planned rate</th>
-                </tr>
-              </thead>
-              <tbody>
-                {indoorTiers.map((t) => (
-                  <tr key={t.name} className="border-b border-sand-200 text-ink-700">
-                    <td className="py-3 pr-4">{t.name}</td>
-                    <td className="py-3 pr-4">{t.size}</td>
-                    <td className="py-3">{t.rate}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+      {/* Quick links to the rest of the site */}
+      <section className="bg-sand-100 px-6 py-16 sm:px-10">
+        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
+          <Link
+            href="/what-we-offer"
+            className="rounded-2xl bg-sand-50 p-6 text-center transition hover:shadow-md"
+          >
+            <p className="font-display text-xl text-teal-700">What We Offer</p>
+            <p className="mt-2 text-sm text-ink-700">
+              Indoor unit sizes, yard classes, pricing and drive-up access.
+            </p>
+          </Link>
+          <Link
+            href="/about"
+            className="rounded-2xl bg-sand-50 p-6 text-center transition hover:shadow-md"
+          >
+            <p className="font-display text-xl text-teal-700">About Us</p>
+            <p className="mt-2 text-sm text-ink-700">
+              Who&apos;s behind the project and why we&apos;re building it.
+            </p>
+          </Link>
+          <Link
+            href="/enquire"
+            className="rounded-2xl bg-sand-50 p-6 text-center transition hover:shadow-md"
+          >
+            <p className="font-display text-xl text-teal-700">Bookings &amp; Enquiries</p>
+            <p className="mt-2 text-sm text-ink-700">
+              Register your interest and we&apos;ll be in touch as plans firm up.
+            </p>
+          </Link>
         </div>
-      </section>
-
-      {/* Yard classes */}
-      <section className="mx-auto max-w-4xl px-6 py-20 sm:px-10">
-        <p className="eyebrow text-center">Planned open-air yard</p>
-        <h2 className="mt-3 text-center font-display text-3xl text-ink-900">
-          Caravan, boat &amp; vehicle bays
-        </h2>
-        <div className="mt-10 overflow-x-auto">
-          <table className="w-full min-w-[560px] border-collapse text-left text-sm">
-            <thead>
-              <tr className="border-b border-sand-200 text-ink-900">
-                <th className="py-3 pr-4 font-display text-base font-normal">Class</th>
-                <th className="py-3 pr-4 font-display text-base font-normal">Size</th>
-                <th className="py-3 pr-4 font-display text-base font-normal">Typical use</th>
-                <th className="py-3 font-display text-base font-normal">Planned rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              {yardClasses.map((y) => (
-                <tr key={y.name} className="border-b border-sand-200 text-ink-700">
-                  <td className="py-3 pr-4">{y.name}</td>
-                  <td className="py-3 pr-4">{y.size}</td>
-                  <td className="py-3 pr-4">{y.use}</td>
-                  <td className="py-3">{y.rate}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-6 text-center text-sm text-ink-700/70">
-          All prices above are planning-stage estimates from Keystone
-          Property Group&apos;s cost modelling — not a live rate card, and
-          subject to change before opening.
-        </p>
-      </section>
-
-      {/* Timeline + interest */}
-      <section id="interest" className="bg-teal-900 px-6 py-20 text-center text-sand-50 sm:px-10">
-        <p className="eyebrow text-coral-400">Timeline</p>
-        <p className="mx-auto mt-3 max-w-xl text-lg">
-          {timeline.bestCase}, or {timeline.worstCase.toLowerCase()}.
-        </p>
-        <p className="mx-auto mt-6 max-w-md text-sand-200">
-          Want to be first to know when we open? Contact details for
-          registering your interest are being finalised — check back soon.
-        </p>
       </section>
     </>
   );

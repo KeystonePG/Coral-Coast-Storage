@@ -18,12 +18,23 @@ export default function Header() {
             <span className="eyebrow">Self Storage</span>
           </span>
         </Link>
-        <a
-          href="#interest"
-          className="rounded-full bg-coral-500 px-5 py-2 text-sm font-medium text-sand-50 transition hover:bg-coral-600"
+        <nav className="hidden gap-6 lg:flex">
+          <Link href="/what-we-offer" className="eyebrow text-ink-700 hover:text-coral-600">
+            What We Offer
+          </Link>
+          <Link href="/about" className="eyebrow text-ink-700 hover:text-coral-600">
+            About Us
+          </Link>
+          <Link href="/enquire" className="eyebrow text-ink-700 hover:text-coral-600">
+            Enquire
+          </Link>
+        </nav>
+        <Link
+          href="/enquire"
+          className="shrink-0 rounded-full bg-coral-500 px-4 py-2 text-sm font-medium text-sand-50 transition hover:bg-coral-600 sm:px-5"
         >
           Register interest
-        </a>
+        </Link>
       </div>
     </header>
   );
