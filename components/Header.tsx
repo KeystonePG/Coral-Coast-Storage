@@ -25,6 +25,9 @@ export default function Header() {
           <Link href="/about" className="eyebrow text-ink-700 hover:text-coral-600">
             About Us
           </Link>
+          <Link href="/guides" className="eyebrow text-ink-700 hover:text-coral-600">
+            Guides
+          </Link>
           <Link href="/faq" className="eyebrow text-ink-700 hover:text-coral-600">
             FAQ
           </Link>

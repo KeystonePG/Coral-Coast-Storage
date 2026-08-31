@@ -193,6 +193,93 @@ export const faqs = [
   },
 ];
 
+// General best-practice storage guidance (widely-used industry advice, not
+// a claim specific to this site — the facility doesn't exist yet, so
+// nobody has "verified" tips for it either). Facility-specific rules below
+// are drawn from the draft Storage Licence Agreement and Facility Rules.
+export const carStorageGuide = [
+  "Check your registration and insurance are current — the draft agreement requires this for any vehicle, caravan or boat kept in the open-air yard.",
+  "Disconnect and remove any gas bottles before you bring the vehicle in, and keep the fuel tank low — fuel can't be decanted on site.",
+  "Wash and dry the vehicle first — trapped dirt and moisture cause paintwork and mould problems over a long stay.",
+  "Keep the fuel tank close to empty for long-term car storage to reduce fire risk and fuel degradation; for regularly-used vehicles, a fuller tank helps prevent condensation.",
+  "Use a trickle/battery maintainer or disconnect the battery if you won't be visiting for a while, to avoid a flat battery.",
+  "Slightly over-inflate tyres or use tyre cradles to avoid flat-spotting if the vehicle won't move for months.",
+  "Bring your own wheel clamp, hitch lock or trailer lock — under the draft rules, securing the bay is the storer's own responsibility.",
+  "Double-check your vehicle, caravan or boat's actual length, width and height against the bay class you're booking before moving in.",
+];
+
+export const itemStorageGuide = [
+  "Label every box clearly on the side (not just the top) so you can identify it without unstacking everything.",
+  "Use uniform, stackable boxes where you can — they use space far more efficiently than mixed shapes and sizes.",
+  "Store heavier items lower and lighter/fragile items higher, and never stack directly on top of anything fragile.",
+  "Leave a little breathing space between boxes and the wall for airflow, rather than packing right up against it.",
+  "Wrap furniture (fabric covers, not plastic sheeting, which can trap moisture) to protect it from dust.",
+  "Disassemble large furniture where practical — it protects the piece and frees up meaningful space.",
+  "Keep an inventory or photo record of what's in storage, particularly for anything you'd need to itemise for insurance.",
+  "Never store anything on the prohibited list — see the FAQ for the full list, including the outright ban on damaged lithium batteries and e-bikes/e-scooters.",
+];
+
+// Sourced directly from the Keystone Customer Sign-Up Checklist (DRAFT,
+// 27 August 2026) prepared for this project — reproduced as the phased
+// sign-up-through-move-in checklist it already is, not rewritten.
+export const signUpChecklist = [
+  {
+    phase: "Before you arrive",
+    items: [
+      "Know roughly what size unit or bay you need — we can help you work this out if you're not sure.",
+      "Check whether a current sign-up promotion applies to you, and what it does and doesn't cover (usually just the storage rent, not the deposit, admin fee or insurance).",
+      "Decide whether you'll pay by Direct Debit or card (AutoPay) — cash and cheque aren't accepted for storage fees.",
+    ],
+  },
+  {
+    phase: "What to bring",
+    items: [
+      "A current government-issued photo ID (driver's licence or passport) — the name on your agreement needs to match this exactly.",
+      "Your Direct Debit or card details, ready to set up automatic payments.",
+      "The name, phone number and email of an Alternative Contact Person (ACP) — someone we can reach if we can't reach you.",
+      "If signing up as a business or trust: your ABN/ACN and confirmation you're authorised to sign on the entity's behalf.",
+    ],
+  },
+  {
+    phase: "Storing a vehicle, caravan or boat (yard bays only)",
+    items: [
+      "Bring your registration details and know your rego or survey expiry date.",
+      "Make sure it's currently registered and insured — if it isn't, let us know so we can discuss whether an exception is possible.",
+      "Check its actual length, width and height against the bay size you're booking.",
+      "Disconnect and remove gas bottles beforehand, and keep the fuel tank low.",
+      "No one is permitted to live or sleep in a stored vehicle, caravan or boat at any time.",
+    ],
+  },
+  {
+    phase: "On move-in day",
+    items: [
+      "Collect your keys, gate code, PIN or remote, and check it works before you leave.",
+      "Bring your own padlock for an indoor unit (please don't lock it in our overlock position).",
+      "Walk through your unit or bay with us and flag anything that doesn't look right.",
+      "Yard bays: we'll take a photo of your vehicle/boat/caravan's condition on arrival — feel free to do the same for your own records.",
+      "Leave with a copy of your signed agreement, either printed or by email.",
+    ],
+  },
+  {
+    phase: "After you've signed up",
+    items: [
+      "Keep your contact details up to date with us — you're required to notify us of any change within a few days.",
+      "Keep an eye out for any fee-increase notices, which we'll always give at least 28 days ahead of time.",
+      "If anything changes with your insurance or the value of what you're storing, let us know.",
+    ],
+  },
+];
+
+// Not part of any business plan, cost estimate or competitor research
+// reviewed for this project — a genuinely new idea, so no rates, trailer
+// sizes or availability are invented here. Confirm details before this
+// goes further than a "considering" note.
+export const trailerHire = {
+  headline: "Trailer hire — under consideration",
+  blurb:
+    "We're looking into offering trailer hire alongside storage, for storers who need to move things to or from their unit or bay. This isn't confirmed yet — no trailer sizes, rates or availability have been decided.",
+};
+
 export const timeline = {
   bestCase: "12–18 months to opening if the site is already correctly zoned",
   worstCase: "21–36+ months if a zoning scheme amendment is required first",

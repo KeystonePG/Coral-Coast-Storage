@@ -6,6 +6,7 @@ import {
   indoorTiers,
   insuranceNote,
   site,
+  trailerHire,
   yardClasses,
 } from "@/lib/content";
 
@@ -138,6 +139,14 @@ export default function WhatWeOfferPage() {
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      {/* Trailer hire — honest "considering" note, nothing decided yet */}
+      <section className="px-6 py-12 sm:px-10">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow">{trailerHire.headline}</p>
+          <p className="mt-3 text-ink-700">{trailerHire.blurb}</p>
         </div>
       </section>
 
