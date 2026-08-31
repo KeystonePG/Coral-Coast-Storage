@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { contact, site } from "@/lib/content";
+import { contact, indoorTiers, site, yardClasses } from "@/lib/content";
 
 const inputClass =
   "w-full rounded-lg border border-sand-200 bg-sand-50 px-4 py-2.5 text-ink-900 outline-none transition focus:border-teal-500";
@@ -15,15 +15,17 @@ export default function InterestForm() {
     const name = form.get("name");
     const email = form.get("email");
     const phone = form.get("phone");
-    const interest = form.get("interest");
+    const spaceType = form.get("spaceType");
+    const moveInDate = form.get("moveInDate");
     const message = form.get("message");
 
-    const subject = `Registering interest — ${site.name}`;
+    const subject = `Booking request — ${site.name}`;
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
-      `Interested in: ${interest}`,
+      `Space requested: ${spaceType}`,
+      `Preferred move-in date: ${moveInDate || "Not specified"}`,
       "",
       "Message:",
       String(message ?? ""),
@@ -60,18 +62,34 @@ export default function InterestForm() {
           <input id="phone" name="phone" className={inputClass} />
         </div>
         <div>
-          <label htmlFor="interest" className="mb-1.5 block text-sm text-ink-700">
-            Interested in
+          <label htmlFor="moveInDate" className="mb-1.5 block text-sm text-ink-700">
+            Preferred move-in date
           </label>
-          <select id="interest" name="interest" className={inputClass}>
-            <option value="Indoor unit">Indoor unit</option>
-            <option value="Open-air yard bay (car/ute/van)">Open-air yard bay (car/ute/van)</option>
-            <option value="Open-air yard bay (boat/caravan/truck)">
-              Open-air yard bay (boat/caravan/truck)
-            </option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
+          <input id="moveInDate" name="moveInDate" type="date" className={inputClass} />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="spaceType" className="mb-1.5 block text-sm text-ink-700">
+          Space you're interested in
+        </label>
+        <select id="spaceType" name="spaceType" className={inputClass}>
+          <optgroup label="Indoor units">
+            {indoorTiers.map((t) => (
+              <option key={t.name} value={`Indoor unit — ${t.name} (${t.size})`}>
+                Indoor — {t.name} ({t.size})
+              </option>
+            ))}
+          </optgroup>
+          <optgroup label="Open-air yard bays">
+            {yardClasses.map((y) => (
+              <option key={y.name} value={`Yard bay — ${y.name} (${y.size})`}>
+                Yard — {y.name} ({y.size}, {y.use})
+              </option>
+            ))}
+          </optgroup>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
       </div>
 
       <div>
@@ -85,13 +103,15 @@ export default function InterestForm() {
         type="submit"
         className="w-full rounded-full bg-coral-500 px-5 py-2.5 text-sm font-medium text-sand-50 transition hover:bg-coral-600 sm:w-auto"
       >
-        Register interest
+        Submit booking request
       </button>
 
       {sent && (
         <p className="text-sm text-ink-700">
           Your email app should have opened with your details ready to send —
-          if it didn&apos;t, email us directly at {contact.email}.
+          if it didn&apos;t, email us directly at {contact.email}. Since
+          we&apos;re not open yet, this joins our interest list rather than
+          confirming a booking.
         </p>
       )}
     </form>
