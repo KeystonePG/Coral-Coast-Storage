@@ -41,6 +41,7 @@ export default function WhatWeOfferPage() {
                 <tr className="border-b border-sand-200 text-ink-900">
                   <th className="py-3 pr-4 font-display text-base font-normal">Tier</th>
                   <th className="py-3 pr-4 font-display text-base font-normal">Size</th>
+                  <th className="py-3 pr-4 font-display text-base font-normal">Roughly fits</th>
                   <th className="py-3 font-display text-base font-normal">Planned rate</th>
                 </tr>
               </thead>
@@ -49,12 +50,18 @@ export default function WhatWeOfferPage() {
                   <tr key={t.name} className="border-b border-sand-200 text-ink-700">
                     <td className="py-3 pr-4">{t.name}</td>
                     <td className="py-3 pr-4">{t.size}</td>
+                    <td className="py-3 pr-4">{t.fits}</td>
                     <td className="py-3">{t.rate}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          <p className="mt-4 text-center text-xs text-ink-700/60">
+            &quot;Roughly fits&quot; is a general sizing guide, not a
+            measurement of this specific site — a good starting point, not a
+            guarantee.
+          </p>
         </div>
       </section>
 

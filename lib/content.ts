@@ -56,12 +56,34 @@ export const competitiveEdge = [
 ];
 
 // Indicative planning rates — see business plan Section 4. Not a live rate
-// card; subject to change before opening.
+// card; subject to change before opening. "fits" is general self-storage
+// sizing convention (the same rough guide most operators publish), not a
+// measured claim specific to this site — flagged as a guide, not a guarantee.
 export const indoorTiers = [
-  { name: "Small", size: "~3.6 m²", rate: "$150–$180/month" },
-  { name: "Medium", size: "~6–9 m²", rate: "$200–$230/month" },
-  { name: "Large", size: "~13.5–19.5 m²", rate: "$270–$310/month" },
-  { name: "Sea container equivalent", size: "6m × 2.4m", rate: "$210–$230/month" },
+  {
+    name: "Small",
+    size: "~3.6 m²",
+    rate: "$150–$180/month",
+    fits: "Boxes, small furniture, a motorbike, seasonal or overflow items",
+  },
+  {
+    name: "Medium",
+    size: "~6–9 m²",
+    rate: "$200–$230/month",
+    fits: "The contents of a studio or 1-bedroom apartment",
+  },
+  {
+    name: "Large",
+    size: "~13.5–19.5 m²",
+    rate: "$270–$310/month",
+    fits: "The contents of a 2–3 bedroom home",
+  },
+  {
+    name: "Sea container equivalent",
+    size: "6m × 2.4m",
+    rate: "$210–$230/month",
+    fits: "The contents of a 3–4 bedroom home, or bulky/commercial stock",
+  },
 ];
 
 export const yardClasses = [
@@ -83,7 +105,15 @@ export const driveUpAccess = {
   blurb:
     "The facility is planned as single-storey indoor unit buildings plus an open-air hardstand yard — no lifts, no shared corridors to navigate. You'd drive straight up to your unit or bay to load and unload.",
   note:
-    "Gate hours and access-control details (PIN, keypad, etc.) haven't been finalised yet — round-the-clock access is one of the options we're planning toward, since it's a real gap among nearby regional operators.",
+    "Entry is planned through a secure gate, with each storer given their own unique access code — exact gate hours haven't been finalised yet, though round-the-clock access is one of the options we're planning toward, since it's a real gap among nearby regional operators.",
+};
+
+// Provided directly by Keystone (28 August 2026) — the planned site office
+// hours, separate from storer gate/yard access hours (still TBD, see
+// driveUpAccess above).
+export const officeHours = {
+  hours: "8:30am–4pm",
+  days: "Monday to Friday",
 };
 
 // Standard for the self storage industry and explicitly a customer
@@ -102,6 +132,66 @@ export const aboutUs = {
   status:
     "This is still a planning-stage project. The site's zoning isn't confirmed yet, so there's no opening date to give — but we wanted the plans, pricing thinking and site details public and honest from the start, rather than waiting until everything is locked in.",
 };
+
+// Sourced from the draft Storage Licence Agreement and Sign-Up Checklist
+// (27 August 2026) prepared for this project. Both documents are explicitly
+// marked DRAFT / NOT LEGAL ADVICE, pending a WA commercial lawyer's review —
+// answers below are worded as current planning/drafting, not settled policy.
+export const faqs = [
+  {
+    question: "When will Coral Coast Self Storage open?",
+    answer:
+      "There's no date yet. The site's zoning isn't confirmed, which is the single biggest thing standing between now and an opening date — we're planning on 12–18 months if the site is already correctly zoned, or 21–36+ months if a zoning scheme amendment is needed first.",
+  },
+  {
+    question: "Can I book a unit or bay now?",
+    answer:
+      "Not yet — there's nothing to pay a deposit on or reserve at this stage. You can register your interest and we'll contact you as plans firm up.",
+  },
+  {
+    question: "Will there be a bond or deposit?",
+    answer:
+      "Not decided yet. We're weighing up two models we found in our research: most metro chains charge no bond, just an admin fee, while the closest regional comparable charges a bond plus a letting fee. We'll publish whichever way we land before opening.",
+  },
+  {
+    question: "How would I pay?",
+    answer:
+      "The current draft plan is Direct Debit or card (AutoPay) only, paid monthly in advance — cash and cheque wouldn't be accepted. This matches every operator we researched, regionally and beyond.",
+  },
+  {
+    question: "Does my vehicle, caravan or boat need to be registered to store it in the yard?",
+    answer:
+      "Under the current draft agreement, yes — it would need to be currently registered and insured, unless a documented exception is agreed with us directly.",
+  },
+  {
+    question: "Can I live in a caravan, boat or vehicle I'm storing?",
+    answer:
+      "No — under the current draft rules, no one would be permitted to reside, sleep in, or loiter around a stored vehicle, caravan or boat at any time.",
+  },
+  {
+    question: "What wouldn't I be able to store?",
+    answer:
+      "The current draft rules ban anything hazardous, illegal, stolen, flammable, explosive, environmentally harmful, perishable or living. Damaged or altered lithium batteries and e-bikes/e-scooters would be banned outright, in any condition — a stricter line than some operators take, reflecting the fire risk they pose in a storage setting. Items worth over $1,000 in total would need to be separately itemised and insured, or not stored at all.",
+  },
+  {
+    question: "Do I need my own insurance?",
+    answer: insuranceNote,
+  },
+  {
+    question: "Would I be able to drive straight up to my unit or bay?",
+    answer:
+      "That's the plan — the facility is designed as single-storey unit buildings plus an open-air yard, with no lifts or shared corridors, so you'd drive straight up to load and unload. Entry is planned through a secure gate with a unique access code for each storer; exact gate hours haven't been finalised yet.",
+  },
+  {
+    question: "What are your office hours?",
+    answer: `The planned site office hours are ${officeHours.hours}, ${officeHours.days}. That's separate from gate/yard access hours for storers, which haven't been finalised yet.`,
+  },
+  {
+    question: "How much notice would I need to give to move out?",
+    answer:
+      "The current draft agreement sets this at 14 days after your fixed period, though this — like the rest of the draft agreement — is still subject to legal review before it's finalised.",
+  },
+];
 
 export const timeline = {
   bestCase: "12–18 months to opening if the site is already correctly zoned",
